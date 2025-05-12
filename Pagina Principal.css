@@ -1,0 +1,173 @@
+/* Decorando e mantendo o padrão de fonte e alinhamento */
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+} 
+
+/* Centralizando meu site */
+.center{
+  max-width: 1100px;
+  padding: 0% 2%;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* Definindo uma imagem de fundo */
+section.main{    
+  min-height: 1000px;
+  background-image: url(Imagens/LogoGremio.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Defininddo uma cor padrão*/
+:root {
+    --cor-padrao: rgb(38, 0, 255);
+  }
+
+/* Adicionando cor de fundo no menu */
+header{
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 40px;
+    padding:  0 10px;
+}
+
+/* Definindo cor para meu nome r*/
+.nome{
+    margin-top: 0.2px;
+    color: rgb(255, 255, 255);
+}
+
+/* Definindo espaço entre menu */
+.menu-container{
+    justify-content: space-between;
+}
+
+/*Cor de fundo no menu Sobre mim */
+.menu-container a.active-menu{
+    background-color: rgb(0, 0, 0);
+}
+
+/* Alinhando etirando sublinhado no menu */
+.menu-container a{
+    color: white;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0 10px;
+    line-height: 40px;
+    text-decoration: none;
+    transition: 0.7s;    
+} 
+
+/* Ao passar o mouse no menu ele muda de cor */
+.menu-container a:hover{
+    color: var(--cor-padrao);
+}
+.foto-perfil{
+  flex-direction: row;
+}
+
+.foto-perfil {
+  border-radius: 50%; /* Definindo a imagem como um círculo */
+  width: 230px; /* Largura da imagem */
+  height: 200px; /* Altura da imagem */
+  object-fit: cover; /* Mantendo a imagem dentro do círculo */
+  position: absolute; /* Definindo a posição  para o canto direito */
+  top: 100px; /* Posicionando no canto superior */
+  right: 0; /* Posicionando no canto direito */
+  left: 900px;
+}
+
+
+/* Posicionando a caixa de texto abaixo da imagem de perfil*/
+.foto-perfil-texto{
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 600px; 
+  height: 350px; 
+  object-fit: cover; 
+  position: absolute; 
+
+  /*Posicionando a caixa de texto abaixo da imagem de perfil */
+  top: 355px; 
+  right: 0.5;
+  left: 700px;  
+}
+
+/* Definindo o título da caixa de texto */
+.foto-perfil-texto{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;   
+}
+
+.foto-perfil-texto a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.foto-perfil-texto a:hover{
+  color: var(--cor-padrao);
+}
+
+  /* Configurando o roda-pé na parte do redes sociais */
+  section.redes-sociais{
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    clear: both;    
+    height: 150px;
+    width: 100%;      
+    background-color: rgba(51, 44, 44, 0.411);
+         
+}
+  .redes-sociais h1{
+    color: black;
+    font-family: 'Arial', Times, serif;
+  }
+
+ .redes-sociais a{
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    margin: 0 20px;
+    padding: 0 20px;
+    line-height: 20px;
+    text-decoration: none;
+    transition: 0.7s;    
+ }
+
+ .redes-sociais a:hover{
+  border-radius: 10px;
+  background-color: var(--cor-padrao)
+}
+
+.logos-redes{
+    width: 25px; 
+    height: 25px; 
+    margin-top: 0,1px;
+  }
+
+@media screen and (max-width: 768px) {
+  .nome{
+    font-size: 11px;
+  }
+  .menu{
+    display: flexbox;
+    padding-left: 0%;
+    font-size: 15px;
+  }
+  .menu-container a{
+    display: flow-root;
+    background-color:rgba(102, 102, 102, 0.6); ;
+  }
+
+  .logos-redes{
+    margin-top: 0.5px;
+  }
+}
+
+
+
+  

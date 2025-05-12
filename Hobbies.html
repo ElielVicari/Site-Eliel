@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        /* Criando forma de colocar imagem por imagem após clicar o botão */
+        document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".image-slider");
+    const images = document.querySelectorAll(".image");
+    let currentImage = 0;
+
+        /* Criando a função de imagens lado a lado */
+    function showImage(index) {
+        images[currentImage].classList.remove("active");
+        images[index].classList.add("active");
+        currentImage = index;
+    }
+        /*Ir para imagem ao lado clicando em próximo*/
+    function nextImage() {
+        if (currentImage < images.length - 1) {
+            showImage(currentImage + 1);
+        }
+    }
+
+    function prevImage() {
+        if (currentImage > 0) {
+            showImage(currentImage - 1);
+        }
+    }
+
+    document.querySelector(".next").addEventListener("click", nextImage);
+    document.querySelector(".prev").addEventListener("click", prevImage);
+
+    // Começar com a primeira imagem visível
+    showImage(currentImage);
+});
+
+    </script>
+     <style>
+        /* Plano de fundo padrão das páginas*/
+        html{
+            min-height: 800px;
+            background-image: url(Imagens/LogoGremio.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        /* Estilos para o elemento principal */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            height: 65vh; /* Tamanho da janela visivel */
+            margin-top: 150px;
+            padding-right: 200px;
+            overflow: hidden;
+        }
+    
+        /* Estilos para o carrossel de imagens */
+        .image-slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;    
+        }
+    
+        .image {
+            right: 20cm;
+            height: 20cm;
+            flex: 0 0 100%;
+            text-align: center;
+            display: none            
+        }
+        
+        .image.active {
+            display: block;
+        }
+    
+        /* Estilos para os menus principais */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgb(41, 120, 224);
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    
+        .prev {
+            left: 600px;
+        }
+    
+        .next {
+            right: 100px;
+        }
+        p{
+            color: white;
+            background-color: rgb(0, 0, 0); 
+        }
+        p a{
+            color: rgb(255, 255, 255);
+            background-color: rgb(8, 8, 8); 
+        }
+        #imagem2{
+            right: 180cm;
+            height: 20cm;          
+
+        }
+    @media screen and (max-width: 1240px) {
+    /* Estilos para telas menores */
+    .container {
+        padding-right: 20px;
+    }
+    /*Ajustando imagem*/
+    .image {
+        height: auto;
+    }
+    p {
+        left: 1240px;
+        right: 200px;
+        margin-top: 300px;
+        background-color: transparent;
+    }
+    p a{
+        margin-left: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-slider">
+            <div class="image active">
+                <img src="Imagens/Praia.jpg" alt="Imagem 1">
+                <p><a> Curto muito ir a praia no verão.</a></p>
+            </div>
+            <div class="image">
+                <a>
+                <img src="Imagens/Cachoeira.jpg" alt="Imagem 2"></a>
+                <p><a> Cachoeiras são uma boa escolha para se refrescar e curtir a paisagem.</a></p>
+            </div>
+            <div class="image">
+                <img src="Imagens/Gremio.jpg" alt="Imagem 3">
+                <p><a> Sempre que possível vou a Arena torcer para meu time do coração.</a></p>
+            </div>   
+                    
+        </div>
+        <button class="prev">Anterior</button>
+        <button class="next">Próxima</button>
+    </div>
+</body>
+</html>S
